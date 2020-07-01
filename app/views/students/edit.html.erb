@@ -1,0 +1,13 @@
+<section class="container">
+<%= link_to 'Home', root_path, class: "light-blue lighten-2 black-text btn" %>
+
+<h1>Edit Student</h1>
+
+<%= form_with model: @edit_student, local: true, url: students_update_path do |f|%>
+
+<%= render partial: "shared/students", locals: {f: f} %>
+
+<%= f.submit "Update"%>
+
+<%end%>
+</section>

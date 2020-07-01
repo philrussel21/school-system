@@ -1,0 +1,16 @@
+<section class="container">
+<%= link_to 'Home', root_path, class: "light-blue lighten-2 black-text btn" %>
+
+<h1><%=@student[:name]%></h1>
+<h2>Student ID: <%='000' + @student[:id].to_s%></h2>
+
+<h3>Teachers</h3>
+<%@student.teachers.each do |teacher|%>
+  <%=teacher[:name]%> <br>
+<%end%>
+
+<h3>Subjects</h3>
+<%@student.subjects.each do |subject|%>
+  <%=subject[:name]%> <br>
+<%end%>
+</section>

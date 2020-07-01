@@ -1,0 +1,32 @@
+<section class="container">
+<%= link_to 'Home', root_path, class: "light-blue lighten-2 black-text btn" %>
+<h1>New Subject</h1>
+
+<%=form_with model: @new_subject, local: true, url: subjects_path do |f| %>
+  <%=f.label :name%>
+  <%= f.text_field :name %>
+  <br>
+  <div class="input-field col s12">
+  <%#f.label(:teacher_id, "Choose a Teacher")%>
+  <%=f.select(:teacher_id) do %>
+    <option value="">Choose a Teacher</option>
+    <%@all_teachers.each do |content|%>
+      <%= content_tag(:option, content[:name], value: content[:id])%>
+    <%end%>
+  <%end%>
+  </div>
+  <br>
+  <div class="input-field col s12">
+  <%#f.label(:student_id, "Choose a Student")%>
+  <%=f.select(:student_id) do %>
+    <option value="">Choose a Student</option>
+    <%@all_students.each do |content|%>
+      <%= content_tag(:option, content[:name], value: content[:id])%>
+    <%end%>
+  <%end%>
+  </div>
+
+  <br>
+  <%=f.submit "Create"%>
+<%end%>
+</section>

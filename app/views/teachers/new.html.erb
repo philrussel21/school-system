@@ -1,0 +1,13 @@
+<section class="container">
+<%= link_to 'Home', root_path, class: "light-blue lighten-2 black-text btn" %>
+
+<h1>New Teacher</h1>
+
+<%= form_with model: @new_teacher, local: true, url: teachers_path do |f|%>
+
+<%= render partial: "shared/teachers", locals: {f: f} %>
+
+<%= f.submit "Create"%>
+
+<%end%>
+</section>

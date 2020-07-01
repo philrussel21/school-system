@@ -1,0 +1,28 @@
+<section class="container">
+<%= link_to 'Home', root_path, class: "light-blue lighten-2 black-text btn" %>
+<h1><%=@subject%></h1>
+
+<ul class="collection with-header">
+<h2 class="collection-header">Teachers teaching
+  <a class="btn-floating btn-large waves-effect waves-light red">
+    <i class="material-icons">+</i>
+  </a>
+</h2>
+
+<%@teachers.each do |teacher|%>
+  <li class="collection-item"><%=teacher%></li> 
+<%end%>
+</ul>
+
+<ul class="collection with-header">
+<h2>Students learning
+  <a class="btn-floating btn-large waves-effect waves-light red">
+    <i class="material-icons">+</i>
+  </a>
+</h2>
+
+<%@students.each do |student|%>
+  <li class="collection-item"><%=student%></li>
+<%end%>
+</ul>
+</section>
