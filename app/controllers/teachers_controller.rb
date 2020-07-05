@@ -27,6 +27,8 @@ class TeachersController < ApplicationController
   end
 
   private
+  # extracts the subjects under the teacher's name then pushed to a new array
+  # which are returned with duplicates gotten rid of.
     def show_subjects(teacher)
       subjects = Array.new
       teacher.subjects.each do |subject|

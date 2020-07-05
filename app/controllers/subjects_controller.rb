@@ -37,6 +37,9 @@ class SubjectsController < ApplicationController
   # end
 
   private
+
+  # queries all Subjects that matches the name then extracts the name of the
+  # teacher from each subject then pushed to a new array.
     def subject_teachers(subject)
       teachers = Array.new
       Subject.where(name: subject).each do |subj|
@@ -45,6 +48,8 @@ class SubjectsController < ApplicationController
       teachers.uniq
     end
 
+    # queries all Subjects that matches the name then extracts the name of the
+    # student from each subject then pushed to a new array.
     def subject_students(subject)
       students = Array.new
       Subject.where(name: subject).each do |subj|
